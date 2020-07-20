@@ -4,6 +4,7 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from flask import session
+import random
 
 import requests #To access our API
 
@@ -19,7 +20,7 @@ app.secret_key = b'HO\xf8\xff+\n\x1e\\~/;}'
 def index():
     session["name"]= "Alyssa"
     return render_template('index.html')
-    
+
 @app.route("/random")
 def jeopardy_random():
     #Use jservice API/random to get 1 jeopardy clue
