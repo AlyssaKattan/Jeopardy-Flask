@@ -9,12 +9,20 @@
 
     <title>{% block title %}{% endblock title%}</title>
   </head>
-  <body>
-    {% block content %}
-    <p> QUESTION: {{data['question']}} </p>
-    <p> VALUE: {{data['value']}} </p>
-    <p> CATEGORY: {{data['category']['title']}} </p>
-    {% endblock content%}
+   <body>
+     {% block content %}
+     <p> QUESTION: {{data['question']}} <p>
+     <p> VALUE: {{data['value']}} <p>
+     <h1> CATEGORY: {{data[0]['category']['title'].upper()}} </h1>
+     <h2> YOUR CURRENT SCORE: {{data[1]}} </h2>
+     <p> QUESTION: {{data[0]['question']}} </p>
+     <p> VALUE: {{data[0]['value']}} </p>
+     <form method="POST" action="/results">
+         <label for='answer'>Type Answer Here: </label> <br>
+         <input type='text' name='answer'> <br>
+         <input type='submit'>
+     </form>
+     {% endblock content%}
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

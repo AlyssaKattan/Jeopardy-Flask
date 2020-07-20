@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+     {% block content %}
+     <h1> YOUR SCORE IS: {{session['score']}} </h1>
+     <p> QUESTION: {{session['clue']['question']}} <p>
+     <p> CATEGORY: {{session['clue']['category']['title'].upper()}} <p>
+     <p> VALUE: {{session['clue']['value']}} </p>  
+     <p> YOUR ANSWER: {{session['form']['answer']}} </p>
+     <p> OFFICIAL ANSWER: {{session['clue']['answer']}}
+     <a href="random"><button type="button" class = "button">Next Question</button></a>
+     <a href="index"><button type="button" class = "button">Quit</button></a>
+     {% endblock content%}

@@ -1,0 +1,16 @@
+{% extends "base.html" %} 
+{% block title %}Random Clue{% endblock title%}
+
+{% block content %}
+
+<img src="https://www.liveabout.com/thmb/wmYHuJe731PyPmqQ7Ca2pGAVyvs=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/jeop_logo_large-58bacf375f9b58af5cb69e2f.jpg" style="width:800px;height:300px;">
+     <h1> YOUR SCORE IS: {{session['score']}} </h1>
+     <p> QUESTION: {{session['clue']['question']}} <p>
+     <p> CATEGORY: {{session['clue']['category']['title'].upper()}} <p>
+     <p> VALUE: {{session['clue']['value']}} </p>
+     <form method="POST" action="/results">
+         <label for='answer'>Type Answer Here: </label> <br>
+         <input type='text' name='answer'> <br>
+         <input type='submit'>
+     </form>
+{% endblock content%}
